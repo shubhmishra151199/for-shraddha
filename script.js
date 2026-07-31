@@ -80,6 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
            popup.style.display = "none";
        });
    }
+   
+   const bgMusic = document.getElementById("bgMusic");
+   loveBtn.addEventListener("click", () => {
+   bgMusic.play();
+   popup.style.display = "flex";
+   confetti({
+       particleCount: 200,
+       spread: 180,
+       origin: { y: 0.6 }
+   });
+});
    window.onclick = function (e) {
        if (e.target == popup) {
            popup.style.display = "none";
