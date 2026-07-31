@@ -38,18 +38,20 @@ document.addEventListener("DOMContentLoaded", function () {
    // -----------------------
    // LOVE COUNTER
    // -----------------------
-   const startDate = new Date("2025-07-06");
+   const startDate = new Date("2025-07-06T00:00:00");
    function updateCounter() {
        const today = new Date();
        const diff = today - startDate;
-       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+       startDate.setHours(0,0,0,0);
+       today.setHours(0,0,0,0);
+       const days = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
        const counter = document.getElementById("loveCounter");
        if (counter) {
            counter.innerHTML =
-               "❤️ Together For ❤️<br><br>" +
+               
                "<span style='font-size:60px'>" +
                days +
-               "</span><br>Days";
+               "</span><br>❤️ Days Together ❤️";
        }
    }
    updateCounter();
